@@ -7,8 +7,8 @@ exepted = ['i', 'l', '1', 'L', 'o', '0', 'O']
 # контейнер для рандомных элементов из списка пароля на вывод пользователю
 chars = ''
 
-count_pas = input('Сколько нужно паролей?\n ')
-len_pas = input('Какая длина пароля\n ')
+count_pas = int(input('Сколько нужно паролей?\n '))
+len_pas = int(input('Какая длина пароля\n '))
 # Основной список символов из которых будет состоять пароль(ли)
 set_pass = []
 
@@ -40,9 +40,9 @@ if excep_pass == 'да':
         
 # Генератор паролей
 def generate_password(length, chars):
-    chars = sample(set_pass, int(len_pas))
+    chars = sample(set_pass, len_pas)
     return ''.join(chars)
 # кол-во паролей
-for i in range(int(count_pas)):
+for i in range(count_pas):
     print(generate_password(len_pas, set_pass))
             
